@@ -22,34 +22,20 @@ Most definitely you should never move files installed by your distro around.
 */
 /**
  * @file main.cpp
- * @author your name (you@domain.com)
+ * @author dev-delphin (you@domain.com)
  * @brief 
  * @version 0.1
  * @date 2022-07-20
- * 
+ * @note gtk-3.0
  * @copyright Copyright (c) 2022
  * 
  */
+//#include "headers/window.h" 
+#include "headers/window.h"
 
-#include <gtk/gtk.h>
-    
-static void destroy(GtkWidget *widget, gpointer data)
-{
-    gtk_main_quit();
-}
-    
 int main(int argc, char *argv[])
 {
-    gtk_init(&argc, &argv);
-    
-    GtkWidget *window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    gtk_window_set_title(GTK_WINDOW(window), "Window");
-    g_signal_connect(window, "destroy", G_CALLBACK(destroy), NULL);
-    
-    gtk_widget_show_all(window);
-    
-    gtk_main();
-    
+    _gtK_window(argc, argv);
     return 0;
 }
 

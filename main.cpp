@@ -9,12 +9,12 @@
  * 
  */
 
-#include "headers/window.h"
 #include <iostream>
+#include "headers/window.h"
 
-int main(int argc, char *argv[])
-{
-    _gtK_window(argc, argv);
+int main(int argc, char **argv) {
+    _gtkwindow(argc, argv);
+   // _gtK_window(argc, argv);
     return 0;
 }
 

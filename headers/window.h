@@ -1,1 +1,4 @@
-void _gtK_window(int argc, char *argv[]);
+#pragma
+#include "../source/window.cpp"
+
+int _gtkwindow(int argc, char **argv);

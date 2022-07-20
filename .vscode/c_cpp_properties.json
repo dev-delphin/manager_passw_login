@@ -43,7 +43,8 @@
             "cppStandard": "c++17",
             "browse": {
                 "path": [
-                    "${workspaceFolder}"
+                    "${workspaceFolder}",
+                    "${workspaceFolder}/source"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""

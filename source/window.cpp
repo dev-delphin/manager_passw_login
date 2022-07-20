@@ -1,5 +1,5 @@
 #include <gtk/gtk.h>
-#include "../headers/window.h"
+//#include "../headers/window.h"
 
 static void destroy(GtkWidget *widget, gpointer data)
 {

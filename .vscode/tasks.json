@@ -32,6 +32,10 @@
                     "-I/usr/include/uuid",
                     "-I/usr/include/glib-2.0",
                     "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+                    "-I/usr/include/graphene-1.0",
+                    "-I/usr/lib/x86_64-linux-gnu/graphene-1.0/include",
+                    "-I/usr/include/glib-2.0",
+                    "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
                 "${file}",
                     "-lgtk-3",
                     "-lgdk-3",
@@ -44,8 +48,11 @@
                     "-lgio-2.0",
                     "-lgobject-2.0",
                     "-lglib-2.0",
+                    "-mfpmath=sse",
+                    "-msse",
+                    "-msse2",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"

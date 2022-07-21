@@ -21,6 +21,11 @@
 #include <iostream>
 #include "headers/window.h"
 
+// exit from app
+static void _destroy_window(GtkWidget *button, GtkWidget *window){
+    g_signal_connect_swapped (button, "clicked", G_CALLBACK (gtk_widget_destroy), window);
+}
+
 static void _init_window (GtkApplication* app, gpointer user_data){
   GtkWidget *window, *button_box, *button;
   GdkPixbuf *pixbuf;
@@ -36,15 +41,15 @@ static void _init_window (GtkApplication* app, gpointer user_data){
     } else std::cout << "not exist" << std::endl;
     //gtk_window_set_icon_name (GTK_WINDOW (window), "data/img/24x24.png");
 //end window
-  button_box = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
-  gtk_container_add (GTK_CONTAINER (window), button_box);
+    button_box = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
+    gtk_container_add (GTK_CONTAINER (window), button_box);
 
-  button = gtk_button_new_with_label ("Hello World");
-  g_signal_connect (button, "clicked", G_CALLBACK (print_hello), NULL);
-  g_signal_connect_swapped (button, "clicked", G_CALLBACK (gtk_widget_destroy), window);
-  gtk_container_add (GTK_CONTAINER (button_box), button);
+    button = gtk_button_new_with_label ("Hello World");
+    g_signal_connect (button, "clicked", G_CALLBACK (print_hello), NULL);
+    _destroy_window(button, window);
+    gtk_container_add (GTK_CONTAINER (button_box), button);
 
-  gtk_widget_show_all (window);
+    gtk_widget_show_all (window);
 }
 
 int main(int argc, char **argv) {

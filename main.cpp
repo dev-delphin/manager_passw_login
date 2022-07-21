@@ -19,18 +19,12 @@
 #include <gtk/gtk.h>
 #include <filesystem>
 #include <iostream>
-//#include "headers/window.h"
-
-static void print_hello (GtkWidget *widget, gpointer   data){
-  g_print ("Hello World\n");
-}
+#include "headers/window.h"
 
 static void _init_window (GtkApplication* app, gpointer user_data){
-    GtkWidget *window;
-    GdkPixbuf *pixbuf;
-      GtkWidget *button;
-  GtkWidget *box;
-    //_errorlog();
+  GtkWidget *window, *button_box, *button;
+  GdkPixbuf *pixbuf;
+//window
     window = gtk_application_window_new (app);
     gtk_window_set_title (GTK_WINDOW (window), "PLM");
     gtk_window_set_default_size (GTK_WINDOW (window), 500, 500);
@@ -40,22 +34,17 @@ static void _init_window (GtkApplication* app, gpointer user_data){
     if (std::filesystem::exists("data/img/32x32.png")) {
         std::cout << "exist" << std::endl;
     } else std::cout << "not exist" << std::endl;
-    gtk_window_set_icon_name (GTK_WINDOW (window), "data/img/24x24.png");
-// btn
-  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_widget_set_halign (box, GTK_ALIGN_CENTER);
-  gtk_widget_set_valign (box, GTK_ALIGN_CENTER);
-
-  gtk_window_set_child (GTK_WINDOW (window), box);
+    //gtk_window_set_icon_name (GTK_WINDOW (window), "data/img/24x24.png");
+//end window
+  button_box = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
+  gtk_container_add (GTK_CONTAINER (window), button_box);
 
   button = gtk_button_new_with_label ("Hello World");
-
   g_signal_connect (button, "clicked", G_CALLBACK (print_hello), NULL);
-  g_signal_connect_swapped (button, "clicked", G_CALLBACK (gtk_window_destroy), window);
+  g_signal_connect_swapped (button, "clicked", G_CALLBACK (gtk_widget_destroy), window);
+  gtk_container_add (GTK_CONTAINER (button_box), button);
 
-  gtk_box_append (GTK_BOX (box), button);
-// end btn
-    gtk_widget_show (window);
+  gtk_widget_show_all (window);
 }
 
 int main(int argc, char **argv) {

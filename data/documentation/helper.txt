@@ -12,3 +12,32 @@ It's really not, if you are using pkg-config --cflags graphene-1.0 to gather the
 
 Most definitely you should never move files installed by your distro around.
 */
+
+
+------------------------------------------------------------------------------------------------
+//     GtkWidget *window;
+//     GdkPixbuf *pixbuf;
+//       GtkWidget *button;
+//   GtkWidget *button_box;
+//     //_errorlog();
+//     window = gtk_application_window_new (app);
+//     gtk_window_set_title (GTK_WINDOW (window), "PLM");
+//     gtk_window_set_default_size (GTK_WINDOW (window), 500, 500);
+//     gtk_window_set_position (GTK_WINDOW (window), GTK_WIN_POS_CENTER);
+//     pixbuf = gdk_pixbuf_new_from_file("data/img/64x64.png", NULL);
+//     gtk_window_set_icon (GTK_WINDOW (window), pixbuf);
+//     if (std::filesystem::exists("data/img/32x32.png")) {
+//         std::cout << "exist" << std::endl;
+//     } else std::cout << "not exist" << std::endl;
+//     gtk_window_set_icon_name (GTK_WINDOW (window), "data/img/24x24.png");
+// // btn
+//   button_box = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
+//   gtk_container_add (GTK_CONTAINER (window), button_box);
+
+//   button = gtk_button_new_with_label ("Hello World");
+//   g_signal_connect (button, "clicked", G_CALLBACK (print_hello), NULL);
+//   g_signal_connect_swapped (button, "clicked", G_CALLBACK (gtk_widget_destroy), window);
+//   gtk_container_add (GTK_CONTAINER (button_box), button);
+// // end btn
+//     gtk_widget_show_all (window);
+------------------------------------------------------------------------------------------------

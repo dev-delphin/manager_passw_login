@@ -36,14 +36,15 @@ static void _init_window (GtkApplication* app, gpointer user_data){
     gtk_window_set_position (GTK_WINDOW (window), GTK_WIN_POS_CENTER);
     pixbuf = gdk_pixbuf_new_from_file("data/img/64x64.png", NULL);
     gtk_window_set_icon (GTK_WINDOW (window), pixbuf);
-    if (std::filesystem::exists("data/img/32x32.png")) {
+   /* if (std::filesystem::exists("data/img/32x32.png")) {
         std::cout << "exist" << std::endl;
-    } else std::cout << "not exist" << std::endl;
+    } else std::cout << "not exist" << std::endl;*/
     //gtk_window_set_icon_name (GTK_WINDOW (window), "data/img/24x24.png");
 //end window
     button_box = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
     gtk_container_add (GTK_CONTAINER (window), button_box);
-
+    std::string str = "Hello world!";
+_errorlog(str);
     button = gtk_button_new_with_label ("Hello World");
     g_signal_connect (button, "clicked", G_CALLBACK (print_hello), NULL);
     _destroy_window(button, window);

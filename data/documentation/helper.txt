@@ -3,6 +3,7 @@
 // $ sudo apt-get install libdrm-dev
 // $ sudo apt-get install gcc-multilib
 // $ sudo apt-get install gcc-multilib g++-multilib
+// https://stackoverflow.com/questions/58751821/how-to-configure-vscode-for-gtk3-for-intellisense-build-debug-and-g
 /*
 The graphene-config.h header is system dependent, which means it cannot go in the global include directory. The appropriate place for this kind of headers is a directory under libdir.
 

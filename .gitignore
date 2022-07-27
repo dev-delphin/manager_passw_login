@@ -1,4 +1,4 @@
 *.exe
 bin
-.sh
-.bat
+*.sh
+*.bat
